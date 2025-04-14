@@ -277,3 +277,21 @@ window.addEventListener("load", () =>{
         document.querySelector(".preloader").style.display = "none";
     }, 600)
 })
+
+let userTextaera = document.getElementById('user_dtls');
+let sendMsg = document.getElementById('sendMsg');
+let userTextaeraInputValue = userTextaera.value;
+
+sendMsg.onclick = () => {
+    localStorage.setItem('userEnterFeeddback', userTextaeraInputValue);
+    
+}
+
+let storedValue = localStorage.getItem('userEnterFeeddback');
+
+if(storedValue === null) {
+    userTextaeraInputValue = '';
+}
+else {
+    userTextaeraInputValue = storedValue;
+}
